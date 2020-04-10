@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "307842250374",
+    "firebase_url": "https://chat-f9491.firebaseio.com",
+    "project_id": "chat-f9491",
+    "storage_bucket": "chat-f9491.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307842250374:android:5fa3eb7594d1750c77c307",
+        "android_client_info": {
+          "package_name": "kz.application.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307842250374-1lphd62j8jf7ghh9uncbipiupf4blqkq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdjwVBqffH8iGqfgUcTgPxuB_6ybaqBeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307842250374-1lphd62j8jf7ghh9uncbipiupf4blqkq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Chat</string>
+    <string name="enter_username_edit_text">Enter username</string>
+    <string name="sign_in_button">Sign in</string>
+    <string name="sign_up_link">Don\'t have an account? Sing up</string>
+    <string name="enter_password_hint">Enter your password</string>
+    <string name="enter_name_hint">Enter name</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="enter_description_hint">Enter description</string>
+    <string name="enter_due_date_hint">Enter due date</string>
+    <string name="low_text">Low</string>
+    <string name="medium_text">Medium</string>
+    <string name="high_text">High</string>
+    <string name="save_text">Save</string>
+    <string name="enter_title_text">Enter title</string>
+    <string name="edit_text">Edit</string>
+    <string name="mark_as_done_text">Mark as Done</string>
+    <string name="priority_text">Priority</string>
+    <string name="logout">Logout</string>
+    <string name="add_item_text">+ Add Item</string>
+    <string name="incorrect_username_pass">Enter correct username or password!</string>
+    <string name="user_not_f">User not found</string>
+    <string name="email_et">Email</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="start_conversation_button">Start conversation</string>
+    <string name="send_text">Send</string>
+    <string name="select_user_label">Select user</string>
+    <string name="reg_label">Registration</string>
+</resources>
