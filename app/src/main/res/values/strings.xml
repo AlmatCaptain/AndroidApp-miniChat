@@ -26,4 +26,5 @@
     <string name="send_text">Send</string>
     <string name="select_user_label">Select user</string>
     <string name="reg_label">Registration</string>
+    <string name="status_text">status</string>
 </resources>

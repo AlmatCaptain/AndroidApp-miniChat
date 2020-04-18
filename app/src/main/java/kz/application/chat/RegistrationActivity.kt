@@ -38,7 +38,8 @@ class RegistrationActivity : AppCompatActivity() {
                     val user = hashMapOf(
                         "email" to email,
                         "username" to username,
-                        "uid" to uid
+                        "uid" to uid,
+                        "status" to false
                     )
                     Firebase.database
                         .collection("users")

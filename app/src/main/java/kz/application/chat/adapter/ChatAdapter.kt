@@ -1,5 +1,6 @@
 package kz.application.chat.adapter
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -22,17 +23,32 @@ class ChatAdapter(
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
-        fun bindItem(chat: Chat, clickListener: (Chat,User) -> Unit) {
-            val client = chat.participants.find { u -> u.uid != Firebase.auth.currentUser?.uid }
+        @SuppressLint("SetTextI18n")
+        fun bindItem(chat: Chat, clickListener: (Chat, User) -> Unit) {
+            val client = chat.participantIds.find { u -> u != Firebase.auth.currentUser?.uid }
             val simpleDateFormat = SimpleDateFormat("MMM dd, hh:mm");
+            Firebase.database.collection("users").get().addOnSuccessListener { u ->
 
-            if(client != null){
-                view.client_username.text = client.username
-                view.last_message.text = chat.lastMess
-                view.date_view.text = simpleDateFormat.format(chat.lastMessDate.toDate())
+                for (doc in u) {
+                    val user = doc.toObject(User::class.java)
+
+                    if (client == user.uid) {
+                        view.client_username.text = user.username
+                        view.last_message.text = chat.lastMess
+                        view.date_view.text = simpleDateFormat.format(chat.lastMessDate.toDate())
+
+                        if (!user.status) {
+                            view.status_user.text = "offline"
+                        } else
+                            view.status_user.text = "online"
+                    }
+                    view.setOnClickListener { clickListener(chat, user!!) }
+                }
+
+
+
+
             }
-
-            view.setOnClickListener { clickListener(chat,client!!) }
         }
 
     }

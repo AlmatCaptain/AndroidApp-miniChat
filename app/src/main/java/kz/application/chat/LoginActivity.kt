@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.ProcessLifecycleOwner
 import kotlinx.android.synthetic.main.activity_main.*
 import kz.application.chat.model.Chat
 import kz.application.chat.model.User
 
 class LoginActivity : AppCompatActivity() {
+
+    private val lifecycleListener: SampleLifecycleListener by lazy {
+        SampleLifecycleListener()
+    }
 
     companion object {
         const val EXTRA_USER = "user"
@@ -18,13 +23,18 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        setupLifecycleListener()
         viewSetup()
     }
 
     override fun onResume() {
         super.onResume()
         viewSetup()
+    }
+
+    private fun setupLifecycleListener() {
+        ProcessLifecycleOwner.get().lifecycle
+            .addObserver(lifecycleListener)
     }
 
     private fun viewSetup() {

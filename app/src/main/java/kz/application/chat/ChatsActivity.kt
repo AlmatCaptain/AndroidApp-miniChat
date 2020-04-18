@@ -21,7 +21,6 @@ class ChatsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chats)
 
-
         viewUI()
     }
 
@@ -61,7 +60,7 @@ class ChatsActivity : AppCompatActivity() {
             )
         }
 
-        val documents = Firebase.database.collection("chats")
+        Firebase.database.collection("chats")
             .orderBy("lastMessDate",Query.Direction.DESCENDING)
             .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                 val query = querySnapshot?.documents
